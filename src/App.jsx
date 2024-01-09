@@ -64,12 +64,12 @@ const router = createBrowserRouter([
         element: 
         <>
           <Movies movies={movies}/>
-          <Outlet/>
+          {/* <Outlet/> */}
         </>,
         children: [
           {
-            path: 'movies/:movieId',
-            element: <MovieDetails/>
+            path: ':movieId',
+            element: <MovieDetails movies={movies}/>
           }
         ]
       },

@@ -1,15 +1,13 @@
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
+import MovieNavBar from "./MovieNavBar";
 
 function Movies({movies}) {
   return (
     <div className="comp orange">
       <h1>Movies Component</h1>
+      <MovieNavBar movies={movies}/>
       <Outlet/>
-      <nav>
-        {movies.map(movie => {
-          return <Link key={movie.id} to={`/movies/${movie.id}`}>{movie.title} |</Link>
-        })}
-      </nav>
+      
       
     </div>
   );
